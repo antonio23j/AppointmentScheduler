@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class AppointmentRequest {
 
+    private int id;
     private String name;
     private LocalDateTime dateTime;
     private int duration;

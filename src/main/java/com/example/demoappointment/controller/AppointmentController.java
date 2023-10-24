@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 public class AppointmentController {
     @Autowired
     AppointmentService service;
@@ -24,5 +25,15 @@ public class AppointmentController {
     @PostMapping("/createAppointment")
     public ResponseEntity<String> createAppointment(@RequestBody AppointmentRequest appointment){
         return service.createAppointment(appointment);
+    }
+
+    @PutMapping("/updateAppointment")
+    public void updateAppointment(@RequestBody AppointmentRequest appointment){
+        service.updateAppointment(appointment);
+    }
+
+    @DeleteMapping("/deleteAppointment")
+    public void deleteAppointment(@RequestParam Integer id){
+        service.deleteAppointment(id);
     }
 }

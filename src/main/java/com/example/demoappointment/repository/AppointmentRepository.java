@@ -14,4 +14,6 @@ public interface AppointmentRepository extends CrudRepository<Appointment, Integ
             "endDateTime BETWEEN ?1 AND ?2 OR\n" +
             "?1 BETWEEN startDateTime AND endDateTime")
     public List<Appointment> findOverlappingAppointments(LocalDateTime start, LocalDateTime end);
+
+
 }

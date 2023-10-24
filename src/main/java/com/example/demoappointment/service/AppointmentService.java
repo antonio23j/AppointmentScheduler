@@ -37,4 +37,13 @@ public class AppointmentService {
         LocalDateTime end = start.plusDays(1);
         return repository.findOverlappingAppointments(start,end);
     }
+
+    public void updateAppointment(AppointmentRequest appointment){
+        Appointment appointment1 = new Appointment(appointment);
+        repository.save(appointment1);
+    }
+
+    public void deleteAppointment(Integer id){
+        repository.deleteById(id);
+    }
 }

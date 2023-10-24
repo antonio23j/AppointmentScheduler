@@ -17,13 +17,14 @@ public class Appointment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String name;
     private LocalDateTime startDateTime;
     private int duration;
     private LocalDateTime endDateTime;
 
     public Appointment(AppointmentRequest appointmentRequest){
+        this.id = appointmentRequest.getId();
         this.name = appointmentRequest.getName();
         this.startDateTime = appointmentRequest.getDateTime();
         this.duration = appointmentRequest.getDuration();
